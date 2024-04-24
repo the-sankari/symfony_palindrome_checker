@@ -1,0 +1,26 @@
+{% extends'base.html.twig' %}
+{% block title %}Palindrome Checker
+{% endblock %}
+{% block body %}
+
+	<main class="container">
+		<form method="get" action="{{path('home')}}">
+			<div class='form-floating mb-3 row g-3'>
+				<input type="text" name="text" class="input form-control" placeholder="Text" id="component-name" autocomplete="off">
+				<label class="label form-label" for="component-name">Enter a text</label>
+			</div>
+		</form>
+		<br>
+		{% if text %}
+			<div class="card text-start">
+				<div class="card-body">
+					<p class="card-text">
+						{{text}}
+						is
+						{{msg}}
+					</p>
+				</div>
+			</div>
+		{% endif %}
+	</main>
+{% endblock %}
